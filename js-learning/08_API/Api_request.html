@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<head>
+    <title>API Request</title>
+    <style>
+        .background{
+            background-color: black;
+            color: bisque;
+        }
+    </style>
+</head>
+<body class="background">
+    <div id="frame"></div>
+</body>
+<script>
+    // To get values from api which is json format at old time we use XMLHttpRequest()
+    // it is type of class from which we create object by adding new keyword
+    // There are 4 states of XMLHttprequest
+    // 0 -> UNSENT	Client has been created. open() not called yet.
+    // 1 -> OPENED	open() has been called.
+    // 2 -> HEADERS_RECEIVED send() has been called, and headers and status are available.
+    // 3 -> LOADING	Downloading; responseText holds partial data.
+    // 4 -> DONE	The operation is complete.
+    const url="https://api.github.com/users/hiteshchoudhary"
+    const xhr=new XMLHttpRequest()
+    xhr.open("GET",url)
+    xhr.send()
+    xhr.onreadystatechange=function(){ // Continuously monitor the state of request
+        if(xhr.readyState===4){ // Show current state of the request
+            const api=JSON.parse(this.responseText)  // It return all API values in string format so we need to convert to object/JSON format
+            const users_url=api.avatar_url
+            const users_followers=api.followers
+            frame(users_url,users_followers)
+        } 
+    }
+    const frame=function(image,people){
+                const frame=document.getElementById("frame")
+                frame.innerHTML=`<img src=${image}>`
+                //frame.appendChild(document.createTextNode(`${people}`))
+                const para=document.createElement("p")
+                para.innerHTML=people
+                frame.appendChild(para)
+    }   
+</script>

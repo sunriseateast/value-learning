@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<head>
+    <title> Adding element</title>
+    <style>
+        .background{
+            background-color: black;
+            color: antiquewhite;
+        }
+    </style>
+</head>
+<body class="background">
+    <ul class="language">
+        <li>Cloud</li>
+    </ul>
+</body>
+<script>
+    function addElement(element){
+        const li=document.createElement("li")
+        li.innerHTML=element
+        document.querySelector(".language").appendChild(li)
+    }
+    addElement("HTML")
+
+    function addElement2(element){
+        const li=document.createElement("li")
+        li.appendChild(document.createTextNode(element))
+        document.querySelector(".language").appendChild(li)
+    }
+    addElement2("CSS")
+</script>

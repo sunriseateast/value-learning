@@ -1,0 +1,39 @@
+document.getElementById("heading").getAttribute("class")
+getAttribute("class") => class is key or attribute defined 
+e.g : <h1 id="heading" class="test">Learning Cloud Functions</h1>
+o/p => test
+document.getElementById("heading").setAttribute("test","test2")
+to set attribute class test to test2
+o/p => undefined
+<h1 id="heading" class="test2">Learning Cloud Functions</h1>
+
+
+
+we can store in variables
+let a=document.getElementById("heading")
+o/p => <h1 id="heading" class="test2">Learning Cloud Functions</h1>
+we can access properties 
+a.innerText (shows only visible content)
+a.textContent (shows hidden content also)
+
+
+
+we can use query selector as well just like getElementById
+a=document.querySelector("h2")  It gives only first h2 tag
+a.innerText
+
+querySelectorAll is node type of array not array
+a=document.querySelectorAll("li")
+a.forEach((element)=>element.innerHTML="new line")
+
+
+
+
+#### Parent Child Relation ####
+Anything inside the <div> tag acts as its Child
+<script>
+    const parent_element=document.querySelector(".parent")
+    const child=parent_element.children  => It gives HTML collection
+    const array_child=Array.from(child)
+    array_child.forEach((element)=>{console.log(child)})
+</script>

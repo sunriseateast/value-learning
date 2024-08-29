@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<head>
+    <title>Sync and Async</title>
+</head>
+<body>
+    <h1>Hello from Roshan</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+</body>
+<script>
+  let event
+    document.getElementById("start").addEventListener("click",()=>{
+        event= setInterval(()=>{
+                console.log("roshan",Date.now())
+                    },1000)
+    })
+    document.getElementById("stop").addEventListener("click",()=>{
+        clearInterval(event)
+        console.log("stopped")
+    })
+</script>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<head>
+    <title>Sync and Async</title>
+</head>
+<body>
+    <h1>Hello from cloud</h1>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    // Sync - wait for given context get executed (Blocking code)
+    // Async - No wait for given context get executed (Unblocking code)
+    // setTimeout - One time execution
+    // setInterval - Multiple time execution
+    const stop=setTimeout(() => {
+        document.querySelector("h1").innerHTML="Modified"
+    },2000);
+    document.getElementById("stop").addEventListener("click",()=>{
+        clearTimeout(stop)
+        console.log("stopped")
+    })
+</script>

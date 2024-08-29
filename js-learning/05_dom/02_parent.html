@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<head>
+    <title>Parent Child Relation</title>
+    <style>
+        .background{
+            background-color: black;
+            color: bisque;
+        }
+    </style>
+</head>
+<body class="background">
+    <div class="parent">
+        <p>Child1 from parent 1</p>
+        <p>Child2 from parent 1</p>
+        <p>Child3 from parent 1</p>
+        <p>Child4 from parent 1</p>
+    </div>
+    <div class="parent">
+        <p>Child1 from parent 2</p>
+        <p>Child2 from parent 2</p>
+        <p>Child3 from parent 2</p>
+        <p>Child4 from parent 2</p>
+    </div>
+    <div class="parent">
+        <p>Child1 from parent 3</p>
+        <p>Child2 from parent 3</p>
+        <p>Child3 from parent 3</p>
+        <p>Child4 from parent 3</p>
+    </div>
+</body>
+<script>
+    let parent=document.querySelectorAll(".parent") // We store all parents class in variable form of nodes 
+    // const secound_children=parent.item(1).children  // Access 2nd class by using item and access children which gives in HTML collection
+    // const array_children=Array.from(secound_children)
+    // array_children.forEach((element)=>{console.log(element.innerHTML="roshan")})
+    // console.log(parent.item(1).firstElementChild)
+    // console.log(parent.item(1).lastElementChild)
+    
+    // let para=document.querySelector("p")
+    // console.log(para.parentElement) // Gives overall parent structure
+    // console.log(para.nextElementSibling)
+
+    let para2=document.querySelectorAll("p")
+    console.log(para2.item(4))
+</script>
